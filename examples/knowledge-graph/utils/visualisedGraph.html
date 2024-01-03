@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Network</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <style type="text/css">
+      #mynetwork {
+        width: 800px;
+        height: 600px;
+        border: 1px solid lightgray;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+      const nodes = new vis.DataSet([
+        { id: 1, label: "Quantum Mechanics", color: "lightblue" },
+        { id: 2, label: "Wave-Particle Duality", color: "lightgreen" },
+        { id: 3, label: "Quantum Superposition", color: "lightgreen" },
+        { id: 4, label: "Quantum Entanglement", color: "lightgreen" },
+        { id: 5, label: "Quantum Tunneling", color: "lightgreen" }
+      ])
+
+      const edges = new vis.DataSet([
+        { from: 1, to: 2, label: "Related to", color: "black", arrows: "to" },
+        { from: 1, to: 3, label: "Related to", color: "black", arrows: "to" },
+        { from: 1, to: 4, label: "Related to", color: "black", arrows: "to" },
+        { from: 1, to: 5, label: "Related to", color: "black", arrows: "to" }
+      ])
+
+      const container = document.getElementById("mynetwork")
+      const data = {
+        nodes: nodes,
+        edges: edges
+      }
+      const options = {
+        edges: {
+          smooth: {
+            type: "continuous"
+          }
+        },
+        physics: {
+          stabilization: false,
+          barnesHut: {
+            gravitationalConstant: -500,
+            springConstant: 0.005,
+          }
+        }
+      }
+      const network = new vis.Network(container, data, options)
+    </script>
+  </body>
+</html>

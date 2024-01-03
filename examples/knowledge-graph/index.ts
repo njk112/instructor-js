@@ -49,5 +49,61 @@ const createGraph = async (input: string): Promise<KnowledgeGraph | undefined> =
 }
 
 const graph = await createGraph("Teach me about quantum mechanics")
-// "{"nodes":[{"id":1,"label":"Quantum Mechanics","color":"blue"},{"id":2,"label":"Wave-Particle Duality","color":"green"},{"id":3,"label":"Quantum Superposition","color":"green"},{"id":4,"label":"Quantum Entanglement","color":"green"},{"id":5,"label":"Quantum Tunneling","color":"green"}],"edges":[{"source":1,"target":2,"label":"Related to","color":"black"},{"source":1,"target":3,"label":"Related to","color":"black"},{"source":1,"target":4,"label":"Related to","color":"black"},{"source":1,"target":5,"label":"Related to","color":"black"}]}"
+/* OUTPUT:
+{
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Quantum Mechanics",
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "label": "Wave-Particle Duality",
+      "color": "green"
+    },
+    {
+      "id": 3,
+      "label": "Quantum Superposition",
+      "color": "green"
+    },
+    {
+      "id": 4,
+      "label": "Quantum Entanglement",
+      "color": "green"
+    },
+    {
+      "id": 5,
+      "label": "Quantum Tunneling",
+      "color": "green"
+    }
+  ],
+  "edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "label": "Related to",
+      "color": "black"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "label": "Related to",
+      "color": "black"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "label": "Related to",
+      "color": "black"
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "label": "Related to",
+      "color": "black"
+    }
+  ]
+}
+*/
 console.log({ graph: JSON.stringify(graph) })
